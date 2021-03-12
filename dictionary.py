@@ -11,12 +11,26 @@ def definition(word):
         return data[word]
     # checks to see if data has any close matches
     elif len(word_check(word)) > 0:
-        return "Did you mean %s?" % word_check(word)[0]
+        # I am dumb
+        # if you don't use return here, the program will return None.
+        # even if there are returns in the method you're calling! 
+        return word_logic(word)
     else:
         return "That word doesn't exist. Please double check your spelling."
 
 def word_check(word):
     return get_close_matches(word, data.keys(), cutoff=0.8)
+
+def word_logic(word):
+    yn = input("Did you mean %s? Enter Y/N: " % word_check(word)[0])
+    yn = yn.lower()
+    if yn == "Y":
+        return data[word_check(word)[0]]
+    elif yn == "N":
+        return "That word doesn't exist. Please double check your spelling."
+    else:
+        return "I didn't understand that"
+
 
 word = input("Enter word: ")
 
