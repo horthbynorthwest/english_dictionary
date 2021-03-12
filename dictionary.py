@@ -18,4 +18,6 @@ def definition(word):
 def word_check(word):
     return get_close_matches(word, data.keys(), cutoff=0.8)
 
-print(definition("help"))
+word = input("Enter word: ")
+
+print(definition(word))
