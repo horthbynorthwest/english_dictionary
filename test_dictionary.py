@@ -14,3 +14,9 @@ def test_fails_with_incorrect_word():
     solution = definition("aaasdf")
 
     assert solution == "That word doesn't exist. Please double check your spelling."
+
+def test_can_handle_different_cases():
+    solution = definition("RAIN")
+
+    assert solution == ["Precipitation in the form of liquid water drops with diameters greater than 0.5 millimetres.",
+    "To fall from the clouds in drops of water."]
