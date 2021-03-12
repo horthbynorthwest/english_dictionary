@@ -1,6 +1,8 @@
 import pytest
 
-from dictionary import definition
+from dictionary import definition, word_check
+
+# definition tests
 
 def test_returns_definition():
     solution = definition("mathematics")
@@ -15,8 +17,26 @@ def test_fails_with_incorrect_word():
 
     assert solution == "That word doesn't exist. Please double check your spelling."
 
-def test_can_handle_different_cases():
+def test_can_handle_upper_case():
     solution = definition("RAIN")
 
     assert solution == ["Precipitation in the form of liquid water drops with diameters greater than 0.5 millimetres.",
     "To fall from the clouds in drops of water."]
+
+def test_can_handle_mixed_cases():
+    solution = definition("RAiN")
+
+    assert solution == ["Precipitation in the form of liquid water drops with diameters greater than 0.5 millimetres.",
+    "To fall from the clouds in drops of water."]
+
+def test_can_suggest_words():
+    solution = definition("rainn")
+
+    assert solution == "Did you mean rain?"
+
+# word_check tests 
+
+def test_returns_list_of_close_matches():
+    solution = word_check("rainn")
+
+    assert solution == ["rain", "train", "rainy"]
