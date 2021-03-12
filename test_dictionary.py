@@ -9,4 +9,4 @@ def test_returns_definition():
 
 def test_fails_with_incorrect_word():
     with pytest.raises(Exception):
-        solution = definition("aaasdf")
+        definition("aaasdf")
