@@ -34,6 +34,11 @@ def test_can_suggest_words():
 
     assert solution == "Did you mean rain?"
 
+def test_can_deal_with_proper_nouns():
+    solution = definition("paris")
+
+    assert solution == ["The capital and largest city of France."]
+
 # word_check tests 
 
 def test_returns_list_of_close_matches():

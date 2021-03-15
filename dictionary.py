@@ -9,6 +9,8 @@ def definition(word):
     # simple boolean check to see if word exists in data
     if word in data:
         return data[word]
+    elif word.title() in data:
+        return data[word.title()]
     # checks to see if data has any close matches
     elif len(word_check(word)) > 0:
         # I am dumb
