@@ -39,6 +39,11 @@ def test_can_deal_with_proper_nouns():
 
     assert solution == ["The capital and largest city of France."]
 
+def test_can_deal_with_acronyms():
+    solution = definition("nato")
+
+    assert solution == ["An international organization created in 1949 by the North Atlantic Treaty for purposes of collective security."]
+
 # word_check tests 
 
 def test_returns_list_of_close_matches():

@@ -9,8 +9,12 @@ def definition(word):
     # simple boolean check to see if word exists in data
     if word in data:
         return data[word]
+    # checks to see if a capitalised version exists in data
     elif word.title() in data:
         return data[word.title()]
+    # checks to see if upper case version exists (i.e. USA, NATO)
+    elif word.upper() in data:
+        return data[word.upper()]
     # checks to see if data has any close matches
     elif len(word_check(word)) > 0:
         # I am dumb
