@@ -3,6 +3,8 @@ A Python written, interactive English Dictionary.
 
 Asks for a word and outputs definitions.
 
+This was made following Ardit's python udemy course. Testing was not covered in this course, so all tests were written by me.
+
 For the most part, this has been TDD'd. I still need to look into how to test input as the only failing test currently relies upon user input.
 
 Things I'd like to improve upon in the future:
